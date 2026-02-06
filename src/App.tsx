@@ -23,7 +23,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-pink-300 flex flex-col items-center justify-center p-8">
+    <div className="h-dvh bg-pink-300 flex flex-col items-center justify-center p-8">
       <Title />
       {showButtons && <Buttons onYesClick={handleYesClick} onNoHoverCount={handleNoHoverCount} />}
       {showEmojiRain && emojiType && <EmojiRain emoji={emojiType} />}

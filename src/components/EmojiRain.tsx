@@ -16,6 +16,7 @@ export default function EmojiRain({ emoji }: EmojiRainProps) {
         className="absolute text-4xl pointer-events-none"
         style={{
           left: `${leftPosition}%`,
+          top: '0',
           animation: `fall ${animationDuration}s linear ${animationDelay}s infinite`,
         }}
       >

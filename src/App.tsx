@@ -15,7 +15,7 @@ function App() {
   };
 
   const handleNoHoverCount = (count: number) => {
-    if (count === 5) {
+    if (count === 6) {
       setShowButtons(false);
       setEmojiType('😭');
       setShowEmojiRain(true);
@@ -23,11 +23,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-pink-500 flex flex-col items-center justify-center p-8">
+    <div className="min-h-screen bg-pink-300 flex flex-col items-center justify-center p-8">
       <Title />
-      {showButtons && (
-        <Buttons onYesClick={handleYesClick} onNoHoverCount={handleNoHoverCount} />
-      )}
+      {showButtons && <Buttons onYesClick={handleYesClick} onNoHoverCount={handleNoHoverCount} />}
       {showEmojiRain && emojiType && <EmojiRain emoji={emojiType} />}
     </div>
   );

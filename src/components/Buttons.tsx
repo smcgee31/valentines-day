@@ -25,6 +25,11 @@ export default function Buttons({ onYesClick, onNoHoverCount }: ButtonsProps) {
     setNoButtonPosition({ top: randomTop, left: randomLeft });
   };
 
+  // Determine button text and color based on hover count
+  const isMaybe = hoverCount >= 3;
+  const buttonText = isMaybe ? 'Maybe' : 'No';
+  const buttonColor = isMaybe ? 'bg-blue-500 hover:bg-blue-600' : 'bg-red-500 hover:bg-red-600';
+
   return (
     <div className="flex gap-8">
       <button
@@ -35,7 +40,7 @@ export default function Buttons({ onYesClick, onNoHoverCount }: ButtonsProps) {
       </button>
       <button
         onMouseEnter={handleNoHover}
-        className="bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-12 rounded-full text-xl uppercase transition-colors"
+        className={`${buttonColor} text-white font-bold py-4 px-12 rounded-full text-xl uppercase transition-colors`}
         style={
           hoverCount > 0
             ? {
@@ -46,7 +51,7 @@ export default function Buttons({ onYesClick, onNoHoverCount }: ButtonsProps) {
             : undefined
         }
       >
-        No
+        {buttonText}
       </button>
     </div>
   );

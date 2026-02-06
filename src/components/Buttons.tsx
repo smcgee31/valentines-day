@@ -40,6 +40,7 @@ export default function Buttons({ onYesClick, onNoHoverCount }: ButtonsProps) {
       </button>
       <button
         onMouseEnter={handleNoHover}
+        onClick={handleNoHover}
         className={`${buttonColor} text-white font-bold py-4 px-12 rounded-full text-xl uppercase transition-colors`}
         style={
           hoverCount > 0
